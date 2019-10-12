@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">BMI Calculator</string>
+    <string name="enter_height">Enter Height (cm)</string>
+    <string name="enter_weight">Enter Weight (kg)</string>
+    <string name="bmi">BMI</string>
+    <string name="bmi_starvation">Starvation</string>
+    <string name="bmi_emaciation">Emaciation</string>
+    <string name="bmi_underweight">Underweight</string>
+    <string name="bmi_correct_value">Correct Value</string>
+    <string name="bmi_overweight">Overweight</string>
+    <string name="bmi_first_degree_obesity">First Degree Obesity</string>
+    <string name="bmi_second_degree_obesity">Second Degree Obesity</string>
+    <string name="bmi_extreme_obesity">Extreme Obesity</string>
+</resources>
