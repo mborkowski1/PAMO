@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">BMI And PPM Calculator</string>
+    <string name="title_home">Home</string>
+    <string name="title_bmi_calculator">BMI Calculator</string>
+    <string name="title_ppm_calculator">PPM Calculator</string>
+    <string name="app_description">This app can calculate your BMI and PPM</string>
+    <string name="enter_height">Enter Height (cm)</string>
+    <string name="enter_weight">Enter Weight (kg)</string>
+    <string name="bmi">BMI</string>
+    <string name="bmi_starvation">Starvation</string>
+    <string name="bmi_emaciation">Emaciation</string>
+    <string name="bmi_underweight">Underweight</string>
+    <string name="bmi_correct_value">Correct Value</string>
+    <string name="bmi_overweight">Overweight</string>
+    <string name="bmi_first_degree_obesity">First Degree Obesity</string>
+    <string name="bmi_second_degree_obesity">Second Degree Obesity</string>
+    <string name="bmi_extreme_obesity">Extreme Obesity</string>
+    <string name="ppm">PPM</string>
+    <string name="gender">Choose Gender</string>
+    <string name="gender_man">Man</string>
+    <string name="gender_woman">Woman</string>
+    <string name="enter_age">Enter age</string>
+    <string name="recommendation_diet">Recommendation Diet</string>
+    <string name="ppm_result">You should eat %1$s kcal</string>
+</resources>
