@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -73,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
         ppmResultTextView = findViewById(R.id.ppmResultTextView);
         dietImageView = findViewById(R.id.dietImageView);
         genderManRadioButton = findViewById(R.id.genderManRadioButton);
+        RadioGroup genderRadioGroup = findViewById(R.id.genderRadioGroup);
         recommendationDietTextView = findViewById(R.id.recommendationDietTextView);
         EditText heightEditText = findViewById(R.id.heightEditText);
         EditText weightEditText = findViewById(R.id.weightEditText);
@@ -91,6 +93,12 @@ public class MainActivity extends AppCompatActivity {
         homeLayout.setVisibility(View.VISIBLE);
         calculatorLayout.setVisibility(View.GONE);
         recommendationLayout.setVisibility(View.GONE);
+        genderRadioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                calculatePPM();
+            }
+        });
     }
 
     private void calculateBMI() {
@@ -98,23 +106,23 @@ public class MainActivity extends AppCompatActivity {
             bmiResultTextView.setText("");
             bmiInfoTextView.setText("");
         } else {
-            double result = weight / (height*height);
-            bmiResultTextView.setText(decimalFormat.format(result));
-            if (result < 16) {
+            double bmi = weight / (height*height);
+            bmiResultTextView.setText(decimalFormat.format(bmi));
+            if (bmi < 16) {
                 bmiInfoTextView.setText(R.string.bmi_starvation);
-            } else if (result >= 16 && result <= 16.99) {
+            } else if (bmi >= 16 && bmi <= 16.99) {
                 bmiInfoTextView.setText(R.string.bmi_emaciation);
-            } else if (result >= 17 && result <= 18.49) {
+            } else if (bmi >= 17 && bmi <= 18.49) {
                 bmiInfoTextView.setText(R.string.bmi_underweight);
-            } else if (result >= 18.5 && result <= 24.99) {
+            } else if (bmi >= 18.5 && bmi <= 24.99) {
                 bmiInfoTextView.setText(R.string.bmi_correct_value);
-            } else if (result >= 25 && result <= 29.99) {
+            } else if (bmi >= 25 && bmi <= 29.99) {
                 bmiInfoTextView.setText(R.string.bmi_overweight);
-            } else if (result >= 30 && result <= 34.99) {
+            } else if (bmi >= 30 && bmi <= 34.99) {
                 bmiInfoTextView.setText(R.string.bmi_first_degree_obesity);
-            } else if (result >= 35 && result <= 39.99) {
+            } else if (bmi >= 35 && bmi <= 39.99) {
                 bmiInfoTextView.setText(R.string.bmi_second_degree_obesity);
-            } else if (result >= 40) {
+            } else if (bmi >= 40) {
                 bmiInfoTextView.setText(R.string.bmi_extreme_obesity);
             }
         }
@@ -126,23 +134,27 @@ public class MainActivity extends AppCompatActivity {
             ppmResultTextView.setText("");
             dietImageView.setVisibility(View.INVISIBLE);
         } else {
-            double result;
+            double bmi = weight / (height*height);
+            double ppm;
             if (genderManRadioButton.isChecked()) {
-                result = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+                ppm = (10 * weight) + (6.25 * height) - (5 * age) + 5;
             } else {
-                result = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+                ppm = (10 * weight) + (6.25 * height) - (5 * age) - 161;
             }
             recommendationDietTextView.setText(R.string.recommendation_diet);
-            ppmResultTextView.setText(getApplicationContext().getString(R.string.ppm_result, decimalFormat.format(result)));
-            if (result < 18.5) {
+            ppmResultTextView.setText(getApplicationContext().getString(R.string.ppm_result, decimalFormat.format(ppm)));
+            if (bmi < 18.5) {
                 dietImageView.setVisibility(View.VISIBLE);
-                dietImageView.setImageResource(R.drawable.bmi_too_low);
-            } else if (result >= 18.5 && result <= 24.99) {
+                dietImageView.setImageResource(R.drawable.bmi_underweight);
+            } else if (bmi >= 18.5 && bmi <= 24.99) {
                 dietImageView.setVisibility(View.VISIBLE);
-                dietImageView.setImageResource(R.drawable.bmi_ok);
-            } else if (result > 24.99) {
+                dietImageView.setImageResource(R.drawable.bmi_correct_value);
+            } else if (bmi > 24.99 && bmi <= 29.99) {
                 dietImageView.setVisibility(View.VISIBLE);
-                dietImageView.setImageResource(R.drawable.bmi_too_high);
+                dietImageView.setImageResource(R.drawable.bmi_overweight);
+            } else if (bmi > 30) {
+                dietImageView.setVisibility(View.VISIBLE);
+                dietImageView.setImageResource(R.drawable.bmi_obesity);
             }
         }
     }
@@ -159,6 +171,7 @@ public class MainActivity extends AppCompatActivity {
                 height = 0.0;
             }
             calculateBMI();
+            calculatePPM();
         }
 
         @Override
@@ -180,6 +193,7 @@ public class MainActivity extends AppCompatActivity {
                 weight = 0.0;
             }
             calculateBMI();
+            calculatePPM();
         }
 
         @Override
