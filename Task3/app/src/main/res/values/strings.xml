@@ -60,5 +60,10 @@
     <string name="question5_answer_2">Pizza</string>
     <string name="question5_answer_3">Burger</string>
     <string name="question5_answer_4">Tortilla</string>
+    <string name="question1_correct_answer">Schnitzel</string>
+    <string name="question2_correct_answer">Schnitzel</string>
+    <string name="question3_correct_answer">Schnitzel</string>
+    <string name="question4_correct_answer">Schnitzel</string>
+    <string name="question5_correct_answer">Schnitzel</string>
     <string name="submit_answers_button">Submit Answers</string>
 </resources>

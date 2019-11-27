@@ -8,33 +8,43 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <include
-        android:id="@+id/home_layout"
-        layout="@layout/activity_home" />
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/container2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:layout_marginBottom="56dp"
+        android:layout_above="@+id/nav_view">
 
-    <include
-        android:id="@+id/bmi_calculator_layout"
-        layout="@layout/activity_bmi_calculator" />
+        <include
+            android:id="@+id/home_layout"
+            layout="@layout/activity_home" />
 
-    <include
-        android:id="@+id/ppm_recommendation_layout"
-        layout="@layout/activity_ppm_recommendation" />
+        <include
+            android:id="@+id/bmi_calculator_layout"
+            layout="@layout/activity_bmi_calculator" />
 
-    <include
-        android:id="@+id/chart_layout"
-        layout="@layout/activity_chart" />
+        <include
+            android:id="@+id/ppm_recommendation_layout"
+            layout="@layout/activity_ppm_recommendation" />
 
-    <include
-        android:id="@+id/quizzes_layout"
-        layout="@layout/activity_quizzes" />
+        <include
+            android:id="@+id/chart_layout"
+            layout="@layout/activity_chart" />
 
-    <include
-        android:id="@+id/quiz_layout"
-        layout="@layout/activity_quiz" />
+        <include
+            android:id="@+id/quizzes_layout"
+            layout="@layout/activity_quizzes" />
+
+        <include
+            android:id="@+id/quiz_layout"
+            layout="@layout/activity_quiz" />
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/nav_view"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?android:attr/windowBackground"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,5 +1,6 @@
 package com.example.pamo.task3;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -108,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    @SuppressLint("SetJavaScriptEnabled")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -170,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
                 if (selectedRadioButton1Id != -1) {
                     RadioButton selectedRadioButton1 = findViewById(selectedRadioButton1Id);
                     String selectedRadioButton1Text = selectedRadioButton1.getText().toString();
-                    if (selectedRadioButton1Text.equalsIgnoreCase("Schnitzel")) {
+                    if (selectedRadioButton1Text.equalsIgnoreCase(getString(R.string.question1_correct_answer))) {
                         quizAboutFoodScore++;
                     }
                 }
@@ -179,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
                 if (selectedRadioButton2Id != -1) {
                     RadioButton selectedRadioButton2 = findViewById(selectedRadioButton2Id);
                     String selectedRadioButton2Text = selectedRadioButton2.getText().toString();
-                    if (selectedRadioButton2Text.equalsIgnoreCase("Schnitzel")) {
+                    if (selectedRadioButton2Text.equalsIgnoreCase(getString(R.string.question2_correct_answer))) {
                         quizAboutFoodScore++;
                     }
                 }
@@ -188,7 +190,7 @@ public class MainActivity extends AppCompatActivity {
                 if (selectedRadioButton3Id != -1) {
                     RadioButton selectedRadioButton3 = findViewById(selectedRadioButton3Id);
                     String selectedRadioButton3Text = selectedRadioButton3.getText().toString();
-                    if (selectedRadioButton3Text.equalsIgnoreCase("Schnitzel")) {
+                    if (selectedRadioButton3Text.equalsIgnoreCase(getString(R.string.question3_correct_answer))) {
                         quizAboutFoodScore++;
                     }
                 }
@@ -197,7 +199,7 @@ public class MainActivity extends AppCompatActivity {
                 if (selectedRadioButton4Id != -1) {
                     RadioButton selectedRadioButton4 = findViewById(selectedRadioButton4Id);
                     String selectedRadioButton4Text = selectedRadioButton4.getText().toString();
-                    if (selectedRadioButton4Text.equalsIgnoreCase("Schnitzel")) {
+                    if (selectedRadioButton4Text.equalsIgnoreCase(getString(R.string.question4_correct_answer))) {
                         quizAboutFoodScore++;
                     }
                 }
@@ -206,7 +208,7 @@ public class MainActivity extends AppCompatActivity {
                 if (selectedRadioButton5Id != -1) {
                     RadioButton selectedRadioButton5 = findViewById(selectedRadioButton5Id);
                     String selectedRadioButton5Text = selectedRadioButton5.getText().toString();
-                    if (selectedRadioButton5Text.equalsIgnoreCase("Schnitzel")) {
+                    if (selectedRadioButton5Text.equalsIgnoreCase(getString(R.string.question5_correct_answer))) {
                         quizAboutFoodScore++;
                     }
                 }

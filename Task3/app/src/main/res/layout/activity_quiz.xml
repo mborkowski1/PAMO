@@ -36,16 +36,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/submitAnswersButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
-                android:text="@string/submit_answers_button"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/foodQuizTitleTextView" />
-
             <View
                 android:id="@+id/dividerQuestion1"
                 android:layout_width="409dp"
@@ -56,7 +46,7 @@
                 android:background="?android:attr/listDivider"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/submitAnswersButton" />
+                app:layout_constraintTop_toBottomOf="@+id/foodQuizTitleTextView" />
 
             <TextView
                 android:id="@+id/question1Info"
@@ -483,6 +473,18 @@
                     android:textSize="24sp" />
 
             </RadioGroup>
+
+            <Button
+                android:id="@+id/submitAnswersButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/submit_answers_button"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/question5RadioGroup" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

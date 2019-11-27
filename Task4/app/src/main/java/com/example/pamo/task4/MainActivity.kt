@@ -170,7 +170,7 @@ class MainActivity : AppCompatActivity() {
             if (selectedRadioButton1Id != -1) {
                 val selectedRadioButton1 = findViewById<RadioButton>(selectedRadioButton1Id)
                 val selectedRadioButton1Text = selectedRadioButton1.text.toString()
-                if (selectedRadioButton1Text.equals(R.string.question1_correct_answer.toString(), ignoreCase = true)) {
+                if (selectedRadioButton1Text.equals(getString(R.string.question1_correct_answer), ignoreCase = true)) {
                     quizAboutFoodScore++
                 }
             }
@@ -179,7 +179,7 @@ class MainActivity : AppCompatActivity() {
             if (selectedRadioButton2Id != -1) {
                 val selectedRadioButton2 = findViewById<RadioButton>(selectedRadioButton2Id)
                 val selectedRadioButton2Text = selectedRadioButton2.text.toString()
-                if (selectedRadioButton2Text.equals(R.string.question2_correct_answer.toString(), ignoreCase = true)) {
+                if (selectedRadioButton2Text.equals(getString(R.string.question2_correct_answer), ignoreCase = true)) {
                     quizAboutFoodScore++
                 }
             }
@@ -188,7 +188,7 @@ class MainActivity : AppCompatActivity() {
             if (selectedRadioButton3Id != -1) {
                 val selectedRadioButton3 = findViewById<RadioButton>(selectedRadioButton3Id)
                 val selectedRadioButton3Text = selectedRadioButton3.text.toString()
-                if (selectedRadioButton3Text.equals(R.string.question3_correct_answer.toString(), ignoreCase = true)) {
+                if (selectedRadioButton3Text.equals(getString(R.string.question3_correct_answer), ignoreCase = true)) {
                     quizAboutFoodScore++
                 }
             }
@@ -197,7 +197,7 @@ class MainActivity : AppCompatActivity() {
             if (selectedRadioButton4Id != -1) {
                 val selectedRadioButton4 = findViewById<RadioButton>(selectedRadioButton4Id)
                 val selectedRadioButton4Text = selectedRadioButton4.text.toString()
-                if (selectedRadioButton4Text.equals(R.string.question4_correct_answer.toString(), ignoreCase = true)) {
+                if (selectedRadioButton4Text.equals(getString(R.string.question4_correct_answer), ignoreCase = true)) {
                     quizAboutFoodScore++
                 }
             }
@@ -206,7 +206,7 @@ class MainActivity : AppCompatActivity() {
             if (selectedRadioButton5Id != -1) {
                 val selectedRadioButton5 = findViewById<RadioButton>(selectedRadioButton5Id)
                 val selectedRadioButton5Text = selectedRadioButton5.text.toString()
-                if (selectedRadioButton5Text.equals(R.string.question5_correct_answer.toString(), ignoreCase = true)) {
+                if (selectedRadioButton5Text.equals(getString(R.string.question5_correct_answer), ignoreCase = true)) {
                     quizAboutFoodScore++
                 }
             }
